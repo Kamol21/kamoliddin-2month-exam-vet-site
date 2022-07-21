@@ -265,8 +265,8 @@ img {
     text-align: right;
     text-decoration: none;
     color: #333333;
-    border-bottom: 4px solid transparent;
     border: 0;
+    border-bottom: 4px solid transparent;
     background-color: transparent;
 }
 .header-end__last-link:hover {
@@ -283,6 +283,7 @@ img {
     background-image: url("../images/pet.svg");
     background-repeat: no-repeat;
     content: "";
+    border-bottom: 4px solid transparent;
 }
 .s1 {
     position: relative;
@@ -972,6 +973,145 @@ p {
     color: #5C5C5C;
     text-align: end;
 }
+.modal {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(175, 175, 175, 0.9);
+}
+.modal-show {
+    display: block;
+}
+.modal-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 850px;
+    margin: 10px auto 0 auto;
+    background-image: url("../images/modal-bg.jpg");
+    animation-name: slidedown;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    transition: transform 1s ease;
+}
+@keyframes slidedown {
+    0% { transform: translateY(-100%); }   
+  100% { transform: translateY(0); }
+}
+.modal-close-button {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    margin: 22px 0 0 22px;
+    background-color: transparent;
+    border: 0;
+}
+.modal-left-box {
+    margin: 150px 0 0 72px;
+}
+.modal-left-box::after {
+    display: block;
+    width: 350px;
+    height: 324px;
+    margin-left: -40px;
+    background-image: url("../images/modal-dog.png");
+    background-repeat: no-repeat;
+    content: "";
+}
+.modal-left-word {
+    margin-bottom: 21px;
+    font-size: 20px;
+    line-height: 30px;
+    color: #333333;
+}
+.modal-google-button {
+    display: flex;
+    align-items: center;
+    width: 180px;
+    margin-bottom: 22px;
+    padding: 15px 35px;
+    font-size: 16px;
+    line-height: 21px;
+    text-decoration: none;
+    color: #333333;
+    background-color: #fff;
+}
+.modal-google-button::before {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-right: 14px;
+    background-image: url("../images/google.svg");
+    background-repeat: no-repeat;
+    content: "";
+}
+.modal-facebook-button {
+    display: flex;
+    align-items: center;
+    width: 192px;
+    padding: 15px 35px 15px 22px;
+    font-size: 16px;
+    line-height: 21px;
+    text-decoration: none;
+    color: #333333;
+    background-color: #fff;
+}
+.modal-facebook-button::before {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-right: 14px;
+    background-image: url("../images/facebook.svg");
+    background-repeat: no-repeat;
+    content: "";
+}
+.modal-right-box {
+    width: 410px;
+}
+.modal-title {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 54px;
+    color: #333333;
+}
+.modal-input {
+    width: 335px;
+    margin-bottom: 21px;
+    padding: 16px 0 13px 22px;
+    resize: none;
+    border: 0;
+    border: 4px solid transparent;
+    outline: #FFBD54;
+}
+.modal-input:focus {
+    border: 4px solid #FFBD54;
+}
+.modal-input:not(:placeholder-shown,:focus):invalid {
+    background-color: #FFFFFF;
+    border: 4px solid #DC4D41;
+    border-radius: 5px;
+    color: #DC4D41;
+}
+.modal-form-button {
+    padding: 15px 67px;
+    font-size: 16px;
+    line-height: 21px;
+    color: #FFFFFF;
+    background-color: #000000;
+}
+.modal-form-button:hover {
+    background-color: #FFBD54;
+    color: #333333;
+}
+.modal-form-button:active {
+    opacity: 0.6;
+}
 .services-s1 {
     display: flex;
     align-items: center;
@@ -1144,125 +1284,286 @@ p {
     border-radius: 3px;
     background-color: #FFBD54;
 }
-.modal {
-    display: none;
-    position: fixed;
-    top: 0%;
-    left: 0%;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255, 255, 255);
-    opacity: 0.9;
+.faq-s1 {
+    position: relative;
+    padding: 118px 0 32px 0;
 }
-.modal-show {
+.faq-s1__left-box {
+    width: 447px;
+    margin-left: 105px;
+}
+.faq-s1__title {
+    margin: 0 0 27px 0;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 64px;
+    color: #333333;
+}
+.faq-s1__text {
+    margin: 0 0 35px 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #949494;
+}
+.faq-s1__button {
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+    line-height: 21px;
+    padding: 15px 35px 15px 66px;
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #78C0DE;
+    border-radius: 3px;
+}
+.faq-s1__button::before {
+    position: absolute;
+    top: 24%;
+    left: 20%;
+    width: 21px;
+    height: 21px;
+    background-image: url(../images/button-right-icon.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+}
+.faq-s1__left-img {
+    position: absolute;
+    top: 16%;
+    right: -10%;
+}
+.faq {
+    background-image: url("../images/fliying-bird.png");
+    background-position: calc(50% + 528px) calc(50% + 288px);
+    background-size: 654px 640px;
+    background-repeat: no-repeat;
+}
+.faq-s2 {
+    margin-left: 105px;
+    padding: 32px 0 215px 0;
+    list-style: none;
+}
+.faq-s2__items {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 27px 80px 45px 63px;
+    background-color: #fff;
+}
+.faq-s2__details-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.faq-s2__details-top::before {
     display: block;
+    width: 23px;
+    height: 20px;
+    margin-right: 7px;
+    background-image: url("../images/pet-brown.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
 }
-.modal-box {
+.faq-s2__items:nth-child(2) .faq-s2__details-top::before {
+    background-image: url("../images/pet-blue.svg");
+}
+.faq-s2__items:nth-child(4) .faq-s2__details-top::before {
+    background-image: url("../images/pet-blue.svg");
+}
+.faq-s2__items:nth-child(6) .faq-s2__details-top::before {
+    background-image: url("../images/pet-blue.svg");
+}
+.faq-s2__details-top-time {
+    margin-right: 28px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #333333;
+}
+.faq-s2__details-top-last-word {
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 0.08em;
+    color: #78C0DE;
+}
+.faq-s2__details {
+    width: 550px;    
+}
+.faq-s2__summary {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 850px;
-    margin: 10px auto 0 auto;
-    background-image: url("../images/modal-bg.jpg");
-}
-.modal-close-button {
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    margin: 22px 0 0 22px;
-}
-.modal-left-box {
-    margin: 150px 0 0 72px;
-}
-.modal-left-box::after {
-    display: block;
-    width: 350px;
-    height: 324px;
-    margin-left: -40px;
-    background-image: url("../images/modal-dog.png");
-    background-repeat: no-repeat;
-    content: "";
-}
-.modal-left-word {
-    margin-bottom: 21px;
+    margin-bottom: 23px;
     font-size: 20px;
-    line-height: 30px;
+    line-height: 22px;
     color: #333333;
+    list-style: none;
 }
-.modal-google-button {
-    display: flex;
-    align-items: center;
-    width: 180px;
-    margin-bottom: 22px;
-    padding: 15px 35px;
-    font-size: 16px;
-    line-height: 21px;
-    text-decoration: none;
-    color: #333333;
-    background-color: #fff;
-}
-.modal-google-button::before {
+.faq-s2__summary::after {
+    position: absolute;
+    top: 20%;
+    right: -8%;
     display: block;
     width: 20px;
-    height: 20px;
-    margin-right: 14px;
-    background-image: url("../images/google.svg");
+    height: 10px;
+    background-image: url("../images/Vector.svg");
     background-repeat: no-repeat;
+    background-size: contain;
     content: "";
 }
-.modal-facebook-button {
-    display: flex;
-    align-items: center;
-    width: 192px;
-    padding: 15px 35px 15px 22px;
+.faq-s2__items:nth-child(3) .faq-s2__summary::after {
+    width: 25px;
+    height: 35px;
+    background-image: url("../images/clock.svg");
+}
+.faq-s2__items:nth-child(6) .faq-s2__summary {
+    opacity: 0.5;
+}
+.faq-s2__items:nth-child(3) .faq-s2__summary {
+    opacity: 0.5;
+}
+.faq-s2__items:nth-child(6) .faq-s2__summary::after {
+    width: 25px;
+    height: 35px;
+    background-image: url("../images/clock.svg");
+}
+.faq-s2__details-word {
+    width: 577px;
+    font-weight: 400;
     font-size: 16px;
-    line-height: 21px;
-    text-decoration: none;
-    color: #333333;
-    background-color: #fff;
+    line-height: 20px;
+    color: #949494;
 }
-.modal-facebook-button::before {
-    display: block;
-    width: 20px;
-    height: 20px;
-    margin-right: 14px;
-    background-image: url("../images/facebook.svg");
-    background-repeat: no-repeat;
-    content: "";
+.contacts-s1 {
+    position: relative;
+    padding: 118px 0 130px 0;
 }
-.modal-right-box {
-    width: 410px;
+.contacts-s1__left-box {
+    width: 447px;
+    margin-left: 105px;
+    margin-bottom: 118px;
 }
-.modal-title {
+.contacts-s1__title {
+    margin: 0 0 27px 0;
     font-weight: 700;
-    font-size: 50px;
-    line-height: 54px;
+    font-size: 70px;
+    line-height: 64px;
     color: #333333;
 }
-.modal-input {
-    width: 335px;
-    margin-bottom: 21px;
-    padding: 16px 0 13px 22px;
-    resize: none;
-    border: 0;
-    border: 4px solid transparent;
-    outline: #FFBD54;
+.contacts-s1__text {
+    margin: 0 0 35px 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #949494;
 }
-.modal-input:focus {
-    border: 4px solid #FFBD54;
+.contacts-s1__left-img {
+    position: absolute;
+    top: 6%;
+    right: -19%;
 }
-.modal-input:not(:placeholder-shown,:focus):invalid {
-    background-color: #FFFFFF;
-    border: 4px solid #DC4D41;
-    border-radius: 5px;
-    color: #DC4D41;
+.contacts-s1__left-box-bottom {
+    display: flex;
+    align-items: center;
+    margin-left: 105px;
 }
-.modal-form-button {
-    padding: 15px 67px;
+.contacts-s1__address {
+    margin-right: 118px;
     font-size: 16px;
     line-height: 21px;
-    color: #FFFFFF;
-    background-color: #000000;
+    color: #333333;
+}
+.contacts-s1__address::before {
+    display: block;
+    width: 73px;
+    height: 73px;
+    margin-bottom: 30px;
+    background-image: url("../images/location.svg");
+    background-repeat: no-repeat;
+    content: "";
+}
+.contacts-s1__time-box {
+    display: flex;
+    flex-direction: column;
+    margin-right: 118px;
+}
+.contacts-s1__time-box::before {
+    display: block;
+    width: 77px;
+    height: 72px;
+    margin-bottom: 30px;
+    background-image: url("../images/calendar.svg");
+    background-repeat: no-repeat;
+    content: "";
+}
+.contacts-s1__times {
+    font-size: 16px;
+    line-height: 21px;
+    color: #333333;
+}
+.contacts-s1__big-tel-box::before {
+    display: block;
+    width: 46px;
+    height: 73px;
+    margin-bottom: 30px;
+    background-image: url("../images/faq-phone.svg");
+    background-repeat: no-repeat;
+    content: "";
+}
+.contacts-s1__tel-link {
+    font-size: 16px;
+    line-height: 21px;
+    text-decoration: none;
+    color: #333333;
+}
+.contacts-s1__tel-link:hover {
+    color: #FFBD54;
+}
+.contacts-s1__tel-link:active {
+    color: #333333;
+    opacity: 0.6;
+}
+.contacts-s2 {
+    padding: 230px 0 200px 0;
+    background-image: url("../images/pet-oyolari.png");
+    background-position: calc(50% + 125px) calc(50% + -344px);
+    background-size: 935px 330px;
+    background-repeat: no-repeat;
+}
+.contacts-s2__title {
+    position: relative;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 62px;
+    text-align: center;
+    color: #333333;
+}
+.contacts-s2__title::before {
+    position: absolute;
+    bottom: 95%;
+    left: 51%;
+    display: block;
+    width: 112px;
+    height: 113px;
+    margin: 0 auto;
+    background-image: url("../images/lupa.svg");
+    background-repeat: no-repeat;
+    content: "";
+}
+.contacts-s2__box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.contacts-s2__box::before {
+    position: absolute;
+    top: -63%;
+    left: -1%;
+    display: block;
+    width: 443px;
+    height: 342px;
+    background-image: url("../images/buldok.png");
+    background-repeat: no-repeat;
+    content: "";
 }
